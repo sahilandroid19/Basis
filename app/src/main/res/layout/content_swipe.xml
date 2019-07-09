@@ -5,29 +5,25 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#D8F9FC"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:showIn="@layout/activity_swipe"
         tools:context=".ui.swipe.SwipeActivity">
 
     <com.yuyakaido.android.cardstackview.CardStackView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="10dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:id="@+id/card_stack_view"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="24dp"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="24dp"
-            app:layout_constraintTop_toTopOf="@id/textView"
-            android:layout_marginTop="100dp"
-            android:layout_marginBottom="120dp"
-            app:layout_constraintBottom_toBottomOf="@+id/button"/>
+            android:elevation="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/refresh"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scoreView"
+    />
 
     <TextView
-            android:text="2/10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView"
+            android:id="@+id/scoreView"
             android:textAppearance="?android:textAppearanceLarge"
             android:textStyle="bold|italic"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +36,8 @@
     <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button"
+            android:id="@+id/refresh"
+            android:contentDescription="@string/app_name"
             android:background="@drawable/baseline_refresh_black_48"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
@@ -50,7 +47,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/baseline_arrow_back_black_48"
-            android:id="@+id/imageButton"
+            android:contentDescription="@string/app_name"
+            android:id="@+id/back"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="24dp"
             android:layout_marginBottom="16dp" app:layout_constraintBottom_toBottomOf="parent"/>
@@ -59,9 +57,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/baseline_arrow_forward_black_48"
-            android:id="@+id/imageButton2"
+            android:id="@+id/forward"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="24dp"
-            android:layout_marginBottom="16dp" app:layout_constraintBottom_toBottomOf="parent"/>
+            android:layout_marginBottom="16dp" app:layout_constraintBottom_toBottomOf="parent"
+            android:contentDescription="@string/app_name"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
