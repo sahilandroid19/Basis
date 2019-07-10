@@ -41,6 +41,7 @@ class SwipeActivity : BaseActivity<SwipeViewModel>(), CardStackListener, View.On
         super.setUpObservers()
         viewModel.getCardsData().observe(this, Observer {
             adapter.setCards(it)
+            cardStackView.adapter = adapter
         })
     }
 
@@ -72,7 +73,6 @@ class SwipeActivity : BaseActivity<SwipeViewModel>(), CardStackListener, View.On
 
     private fun initialize() {
         cardStackView.layoutManager = viewModel.getCardStackManager(manager)
-        cardStackView.adapter = adapter
         cardStackView.itemAnimator.apply {
             if (this is DefaultItemAnimator) {
                 supportsChangeAnimations = false
